@@ -36,13 +36,13 @@ class Group
      * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="userGroups")
      * @JoinTable(name="users_groups")
      */
-    private ArrayCollection $users;
+    private Collection $users;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="groups")
      * @JoinTable(name="roles_groups")
      */
-    private ArrayCollection $roles;
+    private Collection $roles;
 
     public function __construct()
     {

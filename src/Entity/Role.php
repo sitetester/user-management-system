@@ -32,7 +32,7 @@ class Role
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Group", mappedBy="roles")
      */
-    private ArrayCollection $groups;
+    private Collection $groups;
 
     public function __construct()
     {

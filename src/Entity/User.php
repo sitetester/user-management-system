@@ -58,7 +58,7 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity="App\Entity\Group", inversedBy="users")
      * @JoinTable(name="users_groups")
      */
-    private ArrayCollection $userGroups;
+    private Collection $userGroups;
 
     /**
      * Disabled user can't login to system, this might be used over 'delete' functionality

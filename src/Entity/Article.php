@@ -17,19 +17,19 @@ class Article
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private ?string $title;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $contents;
+    private ?string $contents;
 
     public function getId(): ?int
     {

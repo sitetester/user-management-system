@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminArticlesController extends AbstractController
 {
-    private $adminArticlesManager;
+    private AdminArticlesManager $adminArticlesManager;
 
     public function __construct(AdminArticlesManager $adminArticlesManager)
     {

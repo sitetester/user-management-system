@@ -27,44 +27,44 @@ class User implements UserInterface
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @Assert\NotBlank
      * @Assert\Email
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $email;
+    private ?string $email;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string")
      */
-    private $password;
+    private ?string $password;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * Intentionally not mapped
      * In this case, roles are actually retrieved from DB table (roles_groups) based on group assigned to this user
      */
-    private $roles = [];
+    private array $roles = [];
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Group", inversedBy="users")
      * @JoinTable(name="users_groups")
      */
-    private $userGroups;
+    private ArrayCollection $userGroups;
 
     /**
      * Disabled user can't login to system, this might be used over 'delete' functionality
      * @ORM\Column(type="boolean")
      */
-    private $disabled = false;
+    private bool $disabled = false;
 
 
     public function __construct()

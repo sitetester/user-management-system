@@ -22,13 +22,13 @@ class Group
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/unitofwork-associations.html#bidirectional-associations
@@ -36,13 +36,13 @@ class Group
      * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="userGroups")
      * @JoinTable(name="users_groups")
      */
-    private $users;
+    private ArrayCollection $users;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="groups")
      * @JoinTable(name="roles_groups")
      */
-    private $roles;
+    private ArrayCollection $roles;
 
     public function __construct()
     {

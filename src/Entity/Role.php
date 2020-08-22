@@ -21,18 +21,18 @@ class Role
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $role;
+    private ?string $role;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Group", mappedBy="roles")
      */
-    private $groups;
+    private ArrayCollection $groups;
 
     public function __construct()
     {

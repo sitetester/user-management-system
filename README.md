@@ -7,6 +7,10 @@ Stories
 * As an admin I can create groups
 * As an admin I can delete groups when they no longer have members  
 
+#### Required setup/environment:
+* PHP 7.4
+* Symfony 5.1
+
 #### Project dependencies
 [Composer](https://getcomposer.org/) is used for managing dependencies.
 
